@@ -20,6 +20,11 @@ html, body {
   padding: 15px;
 }
 
+#sidebar input[type='checkbox'] {
+  position: static !important;
+  margin-right: 10px !important;
+}
+
 #map {
   width: 70%;
   height: 100%;
