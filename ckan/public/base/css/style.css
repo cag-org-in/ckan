@@ -1,0 +1,199 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Noto Sans Tamil', sans-serif;
+  font-size: 11pt;
+}
+
+#sidebar {
+  width: 25%;
+  height: 100%;
+  max-height: 100%;
+  max-height: 100vh;
+  overflow-y: scroll;
+  background: #fff;
+  margin: 0;
+  float: left;
+  text-align: center;
+  padding: 15px;
+}
+
+#map {
+  width: 70%;
+  height: 100%;
+  float: left;
+}
+
+#layers {
+  text-align: left;
+}
+
+form {
+  text-align: left;
+}
+
+form input {
+  margin: 8px;
+  padding: 5px;
+  font-size: 15pt;
+}
+
+#properties, #saved {
+  text-align: left;
+  -moz-padding-start: 0;
+  -webkit-padding-start: 0;
+  -khtml-padding-start: 0;
+  -o-padding-start: 0;
+  padding-start: 0;
+}
+
+#properties li, #saved li {
+  list-style-type: none;
+  list-style: none;
+  margin-bottom: 6px;
+}
+
+#properties label {
+  text-transform: capitalize;
+  display: block;
+  font-weight: bold;
+  line-height: 18pt;
+}
+
+#properties textarea {
+  width: 100%;
+  height: 200px;
+  font-size: 12pt;
+  line-height: 15pt;
+  padding: 5px;
+}
+
+#save, #remove {
+  display: none;
+}
+
+ul#saved > li {
+  cursor: pointer;
+  width: 100%;
+  padding: 4px;
+}
+
+ul#saved > li:nth-child(odd) {
+  background: #ccc;
+}
+
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  color: #ffffff;
+  font-size: 16px;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+#remove.btn {
+  background: #db9834;
+  background-image: none;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+#remove.btn:hover {
+  background: #fdb03c;
+  background-image: none;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: 'Noto Sans Tamil';
+  src: url(lib/NotoSansTamil/NotoSansTamil-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Noto Sans Tamil';
+  font-weight: bold;
+  src: url(lib/NotoSansTamil/NotoSansTamil-Bold.ttf);
+}
+
+form.box {
+  border: 1px solid #444;
+  padding: 8px;
+}
+
+img.leaflet-tile {
+  -webkit-filter: hue-rotate(25deg) brightness(100%);
+  -moz-filter: hue-rotate(25deg) brightness(100%);
+  -o-filter: hue-rotate(25deg) brightness(100%);
+  filter: hue-rotate(25deg) brightness(100%);
+}
+
+#layers li a {
+  display: block;
+  text-decoration: none;
+}
+
+.layer {
+  text-align: left;
+  padding: 6px;
+  border-top: 1px solid #444;
+}
+
+@media (max-width: 767px) {
+  #sidebar {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    float: none;
+    height: auto;
+    padding-bottom: 45px;
+  }
+
+  #map {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    float: none;
+    overflow: hidden;
+    height: 80%;
+    height: 80vh;
+  }
+
+  #layers {
+    -moz-padding-start: 0;
+    -webkit-padding-start: 0;
+    -khtml-padding-start: 0;
+    -o-padding-start: 0;
+    padding-start: 0;
+    text-align: center;
+  }
+
+  #layers li {
+    list-style: none;
+    list-style-type: none;
+    padding: 12px 18px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    width: 80%;
+    margin-left: 5%;
+    margin-bottom: 12px;
+  }
+}
