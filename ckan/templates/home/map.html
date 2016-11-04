@@ -1,0 +1,94 @@
+{% extends "page.html" %}
+{% set homepage_style = ( g.homepage_style or '1' ) %}
+
+{% block subtitle %}{{ _("Welcome") }}{% endblock %}
+
+{% block maintag %}{% endblock %}
+{% block toolbar %}{% endblock %}
+
+{% block content %}
+ <link rel="stylesheet" type="text/css" href="/base/vendor/leaflet.css"/>
+ <link rel="stylesheet" href="/base/vendor/MarkerCluster.css" type="text/css">
+ <link rel="stylesheet" href="/base/vendor/MarkerCluster.Default.css" type="text/css">
+ <link rel="stylesheet" href="/base/css/style.css" type="text/css">
+
+  <div id="sidebar">
+      <h3>Chennai Data</h3>
+      <div class="layer">
+        <label>
+          <input type="checkbox" name="/dataset/33daea7c-33bd-4e18-8dbe-ce5c9e7f4b96/resource/6c4c8e3c-d733-4e85-a587-6cad535dee86/download/busshelters.geojson"/>
+          <span>Bus shelters</span>
+        </label>
+      </div>
+      <div class="layer">
+        <label>
+          <input type="checkbox" name="/dataset/c83cc703-9408-4b6f-82ba-a616fc185f97/resource/da9c89c6-a915-45c6-81f4-f0886c6b1203/download/datatreesurvey.geojson"/>
+          <span>Tree survey</span>
+        </label>
+      </div>
+      <div class="layer">
+        <label>
+          <input type="checkbox" name="/dataset/f26bb0c5-04e1-412e-8647-ebb9ec537bed/resource/f630f4c9-3b55-4081-a00b-2f6cffce9ae2/download/waterlogging.geojson"/>
+          <span>Waterlogged area survey</span>
+        </label>
+      </div>
+      <div class="layer">
+        <label>
+          <input type="checkbox" name="data/zone1assets.csv"/>
+          <span>Zone 1 Assets</span>
+        </label>
+      </div>
+      <div class="layer">
+        <label>
+          <input type="checkbox" name="data/assetreports.json" secondary="data/secondary_assets.csv"/>
+          <span>Asset Reports</span>
+        </label>
+      </div>
+      <h4>Boundaries</h4>
+      <div class="layer">
+        <label>
+          <input type="checkbox" name="/dataset/a0759a0b-f88c-467b-a7f2-757e962b5c41/resource/f62d9b15-b1ad-4127-930d-8056f0d39dff/download/chennai-metro-area.geojson"/>
+          <span>Chennai Metro Area</span>
+        </label>
+      </div>
+      <div class="layer">
+        <label>
+          <input type="checkbox" name="/dataset/a0759a0b-f88c-467b-a7f2-757e962b5c41/resource/6a60bbab-29b5-411a-a359-d2201c39542d/download/chennai-zones.geojson"/>
+          <span>Chennai Zones</span>
+        </label>
+      </div>
+      <div class="layer">
+        <label>
+          <input type="checkbox" name="/dataset/a0759a0b-f88c-467b-a7f2-757e962b5c41/resource/7b3e35b2-c8cf-4994-84bc-fdf7c16f74bd/download/chennai-wards.geojson"/>
+          <span>Chennai Wards</span>
+        </label>
+      </div>
+      <ul id="properties">
+      </ul>
+    </div>
+    <div id="map">
+    </div>
+{% endblock %}
+{% block scripts %}
+    {% resource 'base/main' %}
+    {% resource 'base/ckan' %}
+    {% if g.tracking_enabled %}
+      {% resource 'base/tracking.js' %}
+    {% endif %}
+
+    <script src="/base/vendor/jquery.min.js"></script>    
+    <script src="/base/vendor/leaflet.js"></script>
+    <script src="/base/vendor/topojson.min.js"></script>
+    <script src="/base/vendor/leaflet.markercluster.js"></script>
+    <script src="/base/vendor/leaflet.hash.js"></script>
+
+    <script>
+      var georeactor = { map: "leaflet", div: "map", lat: 13.0907, lng: 80.2318, zoom: 12, data: []};
+      var notes = [];
+    </script>
+
+    <script src="/base/javascript/georeactor-client-osm.js"></script>
+    <script src="/base/javascript/georeactor-layers-osm.js"></script>
+    <script src="/base/javascript/georeactor-checkboxes.js"></script>
+
+{% endblock %}

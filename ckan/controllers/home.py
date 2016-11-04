@@ -88,6 +88,9 @@ class HomeController(base.BaseController):
     def license(self):
         return base.render('home/license.html')
 
+    def map(self):
+        return base.render('home/map.html')
+
     def about(self):
         return base.render('home/about.html')
 
